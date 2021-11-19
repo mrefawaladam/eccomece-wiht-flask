@@ -1,0 +1,408 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> {% block title %}{% endblock %} </title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon (2).ico">
+
+    <!-- CSS
+	============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/bootstrap.min.css') }}">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/font.awesome.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/ionicons.min.css') }}">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins/slick.min.css') }}">
+    <!-- Animation -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins/animate.min.css') }}">
+    <!-- jQuery Ui -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins/jquery-ui.min.css') }}">
+    <!-- Nice Select -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins/nice-select.min.css') }}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins/magnific-popup.css') }}">
+ 
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+     
+</head>
+
+<body>
+
+    <div class="contact-wrapper">
+        <header class="main-header-area">
+            <!-- Main Header Area Start -->
+            <div class="main-header">
+                <div class="container container-default custom-area">
+                    <div class="row">
+                        <div class="col-lg-12 col-custom">
+                            <div class="row align-items-center">
+                                <div class="col-lg-2 col-xl-2 col-sm-6 col-6 col-custom">
+                                    <div class="header-logo d-flex align-items-center">
+                                        <a href="index.html">
+                                            <img class="img-full" src="{{ url_for('static', filename='assets/images/logo/logo2.png')}}" alt="Header Logo">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-xl-7 position-static d-none d-lg-block col-custom">
+                                    <nav class="main-nav d-flex justify-content-center">
+                                        <ul class="nav">
+                                            <li>
+                                                <a href="index.html">
+                                                    <span class="menu-text"> Home</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="shop.html">
+                                                    <span class="menu-text">Shop</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="about-us.html">
+                                                    <span class="menu-text"> About</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="contact-us.html">
+                                                    <span class="menu-text">Contact</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="col-lg-2 col-xl-3 col-sm-6 col-6 col-custom">
+                                    <div class="header-right-area main-nav">
+                                        <ul class="nav">
+                                            <li class="login-register-wrap d-none d-xl-flex">
+                                                <span><a href="my-account.html">My Account</a></span>
+                                            </li>
+                                            <li class="minicart-wrap">
+                                                <a href="#" class="minicart-btn toolbar-btn">
+                                                    <i class="ion-bag"></i>
+                                                    <span class="cart-item_count">3</span>
+                                                </a>
+                                                <div class="cart-item-wrapper dropdown-sidemenu dropdown-hover-2">
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-img">
+                                                            <a href="cart.html"><img src="assets/images/cart/1.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-text">
+                                                            <h5 class="title"><a href="cart.html">11. Product with video - navy</a></h5>
+                                                            <div class="cart-text-btn">
+                                                                <div class="cart-qty">
+                                                                    <span>1×</span>
+                                                                    <span class="cart-price">$98.00</span>
+                                                                </div>
+                                                                <button type="button"><i class="ion-trash-b"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-img">
+                                                            <a href="cart.html"><img src="assets/images/cart/2.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-text">
+                                                            <h5 class="title"><a href="cart.html" title="10. This is the large title for testing large title and there is an image for testing - white">10. This is the large title for testing...</a></h5>
+                                                            <div class="cart-text-btn">
+                                                                <div class="cart-qty">
+                                                                    <span>1×</span>
+                                                                    <span class="cart-price">$98.00</span>
+                                                                </div>
+                                                                <button type="button"><i class="ion-trash-b"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-img">
+                                                            <a href="cart.html"><img src="assets/images/cart/3.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-text">
+                                                            <h5 class="title"><a href="cart.html">1. New and sale badge product - s / red</a></h5>
+                                                            <div class="cart-text-btn">
+                                                                <div class="cart-qty">
+                                                                    <span>1×</span>
+                                                                    <span class="cart-price">$98.00</span>
+                                                                </div>
+                                                                <button type="button"><i class="ion-trash-b"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-price-total d-flex justify-content-between">
+                                                        <h5>Total :</h5>
+                                                        <h5>$166.00</h5>
+                                                    </div>
+                                                    <div class="cart-links d-flex justify-content-center">
+                                                        <a class="obrien-button white-btn" href="cart.html">View cart</a>
+                                                        <a class="obrien-button white-btn" href="checkout.html">Checkout</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="mobile-menu-btn d-lg-none">
+                                                <a class="off-canvas-btn" href="#">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Header Area End -->
+            <!-- Sticky Header Start Here-->
+            <div class="main-header header-sticky">
+                <div class="container container-default custom-area">
+                    <div class="row">
+                        <div class="col-lg-12 col-custom">
+                            <div class="row align-items-center">
+                                <div class="col-lg-2 col-xl-2 col-sm-6 col-6 col-custom">
+                                    <div class="header-logo">
+                                        <a href="index.html">
+                                            <img class="img-full" src="assets/images/logo/logo2.png" alt="Header Logo">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-xl-7 position-static d-none d-lg-block col-custom">
+                                    <nav class="main-nav d-flex justify-content-center">
+                                        <ul class="nav">
+                                            <li>
+                                                <a href="index.html">
+                                                    <span class="menu-text"> Home</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="shop.html">
+                                                    <span class="menu-text">Shop</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="about-us.html">
+                                                    <span class="menu-text"> About</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="contact-us.html">
+                                                    <span class="menu-text">Contact</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="col-lg-2 col-xl-3 col-sm-6 col-6 col-custom">
+                                    <div class="header-right-area main-nav">
+                                        <ul class="nav">
+                                            <li class="login-register-wrap d-none d-xl-flex">
+                                                <span><a href="my-account.html">My Account</a></span>
+                                            </li>
+                                            <li class="minicart-wrap">
+                                                <a href="#" class="minicart-btn toolbar-btn">
+                                                    <i class="ion-bag"></i>
+                                                    <span class="cart-item_count">3</span>
+                                                </a>
+                                                <div class="cart-item-wrapper dropdown-sidemenu dropdown-hover-2">
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-img">
+                                                            <a href="cart.html"><img src="assets/images/cart/1.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-text">
+                                                            <h5 class="title"><a href="cart.html">11. Product with video - navy</a></h5>
+                                                            <div class="cart-text-btn">
+                                                                <div class="cart-qty">
+                                                                    <span>1×</span>
+                                                                    <span class="cart-price">$98.00</span>
+                                                                </div>
+                                                                <button type="button"><i class="ion-trash-b"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-img">
+                                                            <a href="cart.html"><img src="assets/images/cart/2.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-text">
+                                                            <h5 class="title"><a href="cart.html" title="10. This is the large title for testing large title and there is an image for testing - white">10. This is the large title for testing...</a></h5>
+                                                            <div class="cart-text-btn">
+                                                                <div class="cart-qty">
+                                                                    <span>1×</span>
+                                                                    <span class="cart-price">$98.00</span>
+                                                                </div>
+                                                                <button type="button"><i class="ion-trash-b"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-cart-item">
+                                                        <div class="cart-img">
+                                                            <a href="cart.html"><img src="assets/images/cart/3.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="cart-text">
+                                                            <h5 class="title"><a href="cart.html">1. New and sale badge product - s / red</a></h5>
+                                                            <div class="cart-text-btn">
+                                                                <div class="cart-qty">
+                                                                    <span>1×</span>
+                                                                    <span class="cart-price">$98.00</span>
+                                                                </div>
+                                                                <button type="button"><i class="ion-trash-b"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-price-total d-flex justify-content-between">
+                                                        <h5>Total :</h5>
+                                                        <h5>$166.00</h5>
+                                                    </div>
+                                                    <div class="cart-links d-flex justify-content-center">
+                                                        <a class="obrien-button white-btn" href="cart.html">View cart</a>
+                                                        <a class="obrien-button white-btn" href="checkout.html">Checkout</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="mobile-menu-btn d-lg-none">
+                                                <a class="off-canvas-btn" href="#mobileMenu">
+                                                    <i class="fa fa-bars"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <!-- off-canvas menu end -->
+        </header>
+        <!-- Breadcrumb Area Start Here -->
+        {% block breadcrumb %}{% endblock %}
+        <!-- Breadcrumb Area End Here -->
+       
+
+        <!-- content -->
+        {% block content %}{% endblock %}
+        <!-- end content -->
+ 
+        <!-- Footer Area Start Here -->
+        <footer class="footer-area">
+            <div class="footer-widget-area">
+                <div class="container container-default custom-area">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-custom">
+                            <div class="single-footer-widget m-0">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="{{ url_for('static', filename='assets/images/logo/footer2.png')}}" alt="Logo Image">
+                                    </a>
+                                </div>
+                                <p class="desc-content">Obrien is the best parts shop of your daily nutritions. What kind of nutrition do you need you can get here soluta nobis</p>
+                                <div class="social-links">
+                                    <ul class="d-flex">
+                                        <li>
+                                            <a class="border rounded-circle" href="#" title="Facebook">
+                                                <i class="fa fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="border rounded-circle" href="#" title="Twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="border rounded-circle" href="#" title="Linkedin">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="border rounded-circle" href="#" title="Youtube">
+                                                <i class="fa fa-youtube"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="border rounded-circle" href="#" title="Vimeo">
+                                                <i class="fa fa-vimeo"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-2 col-custom">
+                            <div class="single-footer-widget">
+                                <h2 class="widget-title">Information</h2>
+                                <ul class="widget-list">
+                                    <li><a href="contact-us.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-2 col-custom">
+                            <div class="single-footer-widget">
+                                <h2 class="widget-title">Quicklink</h2>
+                                <ul class="widget-list">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="about-us.html">About</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-custom">
+                            <div class="single-footer-widget">
+                                <h2 class="widget-title">See Information</h2>
+                                <div class="widget-body">
+                                    <address>Phone: 01254 698 785, 36598 254 987<br>Email: https://example.com</address>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright-area">
+                <div class="container custom-area">
+                    <div class="row">
+                        <div class="col-12 text-center col-custom">
+                            <div class="copyright-content">
+                                <p>Copyright © 2020 <a href="https://hasthemes.com/" title="https://hasthemes.com/">Kelas 2D</a> | &nbsp;<strong></strong>&nbsp;by <a href="https://hasthemes.com/" title="https://hasthemes.com/">AGARMTIC</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Area End Here -->
+    </div>
+
+    <!-- JS  ============================================ -->
+
+    <!-- jQuery JS -->
+    <script src="{{ url_for('static', filename='assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
+    <!-- jQuery Migrate JS -->
+    <script src="{{ url_for('static', filename='assets/js/vendor/jQuery-migrate-3.3.0.min.js') }}"></script>
+    <!-- Modernizer JS -->
+    <script src="{{ url_for('static', filename='assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
+    <!-- Slick Slider JS -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/slick.min.js') }}"></script>
+    <!-- Countdown JS -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/jquery.countdown.min.js') }}"></script>
+    <!-- Ajax JS -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/jquery.ajaxchimp.min.js') }}"></script>
+    <!-- Jquery Nice Select JS -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/jquery.nice-select.min.js') }}"></script>
+    <!-- Jquery Ui JS -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/jquery-ui.min.js') }}"></script>
+    <!-- jquery magnific popup js -->
+    <script src="{{ url_for('static', filename='assets/js/plugins/jquery.magnific-popup.min.js') }}"></script>
+
+    <!-- Main JS -->
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
