@@ -10,4 +10,4 @@ PyYAML==5.4.1
 SQLAlchemy==1.4.1
 Werkzeug==1.0.1
 bcrypt==3.1.7
-
+werkzeug==2.0.2

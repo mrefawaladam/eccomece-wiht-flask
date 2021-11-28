@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gull - Laravel + Bootstrap 4 admin template</title>
+    <title> {% block title %}{% endblock %} </title>
+    {% block css %}{% endblock %}
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='backend/styles/css/themes/lite-purple.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='backend/styles/vendor/perfect-scrollbar.css') }}">
@@ -139,7 +140,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                             <div class="dropdown-header">
-                                <i class="i-Lock-User mr-1"></i> Timothy Carlson
+                                <i class="i-Lock-User mr-1"></i> {{session['name']}}
                             </div>
                             <a class="dropdown-item">Account settings</a>
                             <a class="dropdown-item">Billing history</a>
@@ -203,6 +204,7 @@
                 <div class="separator-breadcrumb border-top"></div>
 
                 <!-- content goes here -->
+                {% block content %}{% endblock %}
 
 
             </div>
@@ -385,6 +387,7 @@
     <script src="{{ url_for('static', filename='backend/js/vendor/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ url_for('static', filename='backend/js/es5/script.min.js') }}"></script>
     <script src="{{ url_for('static', filename='backend/js/es5/sidebar.large.script.min.js') }}"></script>
+    {% block script %}{% endblock %}
 
 </body>
 
