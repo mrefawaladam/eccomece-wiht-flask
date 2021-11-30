@@ -1,0 +1,74 @@
+{% extends "backend/layouts/app.html" %}
+<!-- template title -->
+{% block title %}
+Create Category
+{% endblock %}
+<!-- end template -->
+ 
+<!-- template css -->
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='backend/styles/vendor/datatables.min.css') }}">
+
+{% endblock %}
+<!-- end template -->
+
+<!-- tempalte content -->
+{% block content %}
+<div class="col-lg-6 mb-3">
+    <div class="card">
+        <div class="card-header bg-transparent">
+            <h3 class="card-title"> Tambah Data</h3>
+        </div>
+        <!--begin::form-->
+        <form action="{{ url_for('categoryCreate') }}" method="POST" enctype="multipart/form-data">
+            <div class="card-body">
+                <div class="form-row ">
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail4" class="ul-form__label">Nama Category:</label>
+                        <input type="text" class="form-control" name="name" id="inputtext4" placeholder="Enter full name">
+                         
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail4" class="ul-form__label">Image:</label>
+                        <input type="file" class="form-control" id="inputtext4" name="file" placeholder="Enter full name">
+                        
+                    </div>
+
+                </div>
+                <div class="custom-separator"></div>
+                
+            </div>
+            <div class="card-footer bg-transparent">
+                <div class="mc-footer">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn  btn-primary m-1">Simpan</button>
+                            <button type="button" class="btn btn-outline-secondary m-1">Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- end::form -->
+    </div>
+</div>
+{% endblock %}
+<!-- end template -->
+
+<!-- template scritp -->
+
+{% block script %}
+<script src="{{ url_for('static', filename='backend/js/vendor/datatables.min.js' )}}"></script>
+<script src="{{ url_for('static', filename='backend/js/datatables.script.js') }}"></script>
+
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+    } );
+</script>
+
+{% endblock %}
+
+<!-- end template -->
