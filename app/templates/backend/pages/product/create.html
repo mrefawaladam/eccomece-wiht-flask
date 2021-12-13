@@ -1,0 +1,97 @@
+{% extends "backend/layouts/app.html" %}
+<!-- template title -->
+{% block title %}
+Create Product
+{% endblock %}
+<!-- end template -->
+ 
+<!-- template css -->
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='backend/styles/vendor/datatables.min.css') }}">
+
+{% endblock %}
+<!-- end template -->
+
+<!-- tempalte content -->
+{% block content %}
+<div class="col-lg-12 mb-3">
+    <div class="card">
+        <div class="card-header bg-transparent">
+            <h3 class="card-title"> Tambah Data</h3>
+        </div>
+        <!--begin::form-->
+        <form action="{{ url_for('categoryCreate') }}" method="POST" enctype="multipart/form-data">
+            <div class="card-body">
+                <div class="form-row ">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="ul-form__label">Nama Produk:</label>
+                        <input type="text" class="form-control" name="name" id="inputtext4" placeholder="Enter full name">
+                         
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="ul-form__label">Nama Produk:</label>
+                        <select name="category_id" class="form-control">
+                             {% for row in category %} 
+                            <option value="{{ row[0] }}" >{{ row[1] }}</option> 
+                             {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="ul-form__label">Pice:</label>
+                        <input type="number" class="form-control" id="inputtext4" name="price" placeholder="Enter full name">
+                        
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="ul-form__label">Qty:</label>
+                        <input type="number" class="form-control" id="inputtext4" name="qty" placeholder="Enter full name">
+                        
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="ul-form__label">Weight:</label>
+                        <input type="text" class="form-control" id="inputtext4" name="weight" placeholder="Enter full name">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="ul-form__label">Image:</label>
+                        <input type="file" class="form-control"  multiple  webkitdirectory   id="inputtext4" name="image[]" placeholder="Enter full name">
+                    </div>
+
+                </div>
+                <div class="custom-separator"></div>
+                
+            </div>
+            <div class="card-footer bg-transparent">
+                <div class="mc-footer">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn  btn-primary m-1">Simpan</button>
+                            <button type="button" class="btn btn-outline-secondary m-1">Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- end::form -->
+    </div>
+</div>
+{% endblock %}
+<!-- end template -->
+
+<!-- template scritp -->
+
+{% block script %}
+<script src="{{ url_for('static', filename='backend/js/vendor/datatables.min.js' )}}"></script>
+<script src="{{ url_for('static', filename='backend/js/datatables.script.js') }}"></script>
+
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+    } );
+</script>
+
+{% endblock %}
+
+<!-- end template -->

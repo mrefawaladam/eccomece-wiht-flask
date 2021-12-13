@@ -21,11 +21,11 @@ Category
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-2">
-                        <h4 class="card-title">Data Category</h4>
+                        <h4 class="card-title">Data Sub Category</h4>
                     </div>
                     <div class="col-md-8"> </div>
                     <div class="col-md-1 ">
-                        <a href="{{ url_for('categoryCreate') }}" class="btn btn-primary ml-auto btn-icon m-1">
+                        <a href="{{ url_for('subCategoryCreate') }}" class="btn btn-primary ml-auto btn-icon m-1">
                             <span class="ul-btn__icon"><i class="i-Add"></i></span>
                             <span class="ul-btn__text">Tambah</span>
                         </a>
@@ -37,8 +37,8 @@ Category
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Gambar</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Sub Category</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -51,14 +51,14 @@ Category
                                     {{ row[1] }}
                                 </td>
                                 <td>
-                                    <img width="50" src="{{ url_for('static', filename='upload/categori/') }}{{row[2]}}" alt="">
+                                    {{ row[2] }}
                                 </td>
  
                                 <td>
-                                    <a  href="{{url_for('categoryEdit', id_category=row[0])}}" class="btn btn-success ">
+                                    <a  href="{{url_for('subCategoryEdit', id_sub_category=row[0])}}" class="btn btn-success ">
                                     <i class="nav-icon i-Pen-2 "></i>
                                 </a>
-                                    <a href="{{url_for('categoryDelete', id_category=row[0])}}" class="btn btn-danger ">
+                                    <a href="{{url_for('subCategoryDelete', id_sub_category=row[0])}}" class="btn btn-danger ">
                                     <i class="nav-icon i-Close-Window "></i>
                                 </a>
                                 </td>

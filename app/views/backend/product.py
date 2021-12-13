@@ -1,15 +1,12 @@
 from flask import render_template, redirect, request, jsonify,session,url_for
 from app import app
-from app import db
+from app import db  
 import bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename  
- 
 
-app.config["UPLOAD_FOLDER"] = "app/static/upload/categori/"
-
-@app.route("/category", methods=['GET','POST'])
-def category(): 
+@app.route("/product", methods=['GET','POST'])
+def product(): 
     
     if request.method == 'POST':
 
@@ -18,18 +15,18 @@ def category():
         # koneksi open
         container = []
         conn = db.connect()
-        query = conn.execute("SELECT * FROM category") 
+        query = conn.execute("SELECT * FROM product") 
         results = query.fetchall()
         # memasukan data dari database ke sql
         for data in results:
             container.append(data)
         conn.close()  
         
-        return render_template("backend/pages/category/index.html",container=container)
+        return render_template("backend/pages/product/index.html",container=container)
     
 
-@app.route("/category/create", methods=['GET','POST'])
-def categoryCreate(): 
+@app.route("/product/create", methods=['GET','POST'])
+def productCreate(): 
     if request.method == 'POST':
         conn = db.connect()
         files = request.files['file']
@@ -44,11 +41,19 @@ def categoryCreate():
         conn.close()
         return redirect(url_for('category'))
     else:
-        return render_template("backend/pages/category/create.html")
+        category = []
+        conn = db.connect()
+        query = conn.execute("SELECT * FROM category") 
+        results = query.fetchall()
+        # memasukan data dari database ke sql
+        for data in results:
+            category.append(data)
+        conn.close()  
+        return render_template("backend/pages/product/create.html",category=category)
 
 
-@app.route("/category/edit/<id_category>", methods=['GET','POST'])
-def categoryEdit(id_category): 
+@app.route("/product/edit/<id_category>", methods=['GET','POST'])
+def productEdit(id_category): 
     conn = db.connect()
     query = conn.execute("SELECT * FROM category WHERE id_category=%s",(id_category)) 
     dataCategory = query.fetchone()
@@ -69,10 +74,10 @@ def categoryEdit(id_category):
         return redirect(url_for('category'))
     else:
         conn.close() 
-        return render_template("backend/pages/category/edit.html",dataCategory=dataCategory)
+        return render_template("backend/pages/product/edit.html",dataCategory=dataCategory)
 
-@app.route("/category/delete/<id_category>" )
-def categoryDelete(id_category): 
+@app.route("/product/delete/<id_category>" )
+def productDelete(id_category): 
     conn = db.connect()
     query = conn.execute("DELETE FROM category WHERE id_category=%s",(id_category)) 
     conn.close()

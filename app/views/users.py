@@ -1,5 +1,5 @@
  
-from flask import render_template, redirect,request, jsonify,session
+from flask import render_template, redirect,request,url_for, jsonify,session
 from app import app
 from app import db
 import bcrypt
@@ -48,8 +48,10 @@ def login():
             if  check_password_hash(user.password, password):
                 session['name'] = user.first_name
                 session['username'] = user.username
-                return redirect("dashboard-admin", code=200)
+                return redirect(url_for('dashboard_admin'))
+                
             else:
                 return "Error password and username not match"
     else:
         return render_template("frontend/auth/login.html")
+
