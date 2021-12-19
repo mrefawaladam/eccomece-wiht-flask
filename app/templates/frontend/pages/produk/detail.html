@@ -1,0 +1,147 @@
+{% extends "frontend/layouts/app.html" %}
+<!-- template title -->
+{% block title %}
+Login
+{% endblock %}
+<!-- end template -->
+ <!-- tempalte breadcumb -->
+{% block breadcrumb %}
+<div class="breadcrumbs-area position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="breadcrumb-content position-relative section-content">
+                    <h3 class="title-3">Detail Prdouk</h3>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li>Shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- end template -->
+
+
+<!-- tempalte content -->
+{% block content %}
+<div class="single-product-main-area">
+    <div class="container container-default custom-area">
+        <div class="row">
+            <div class="col-lg-5 col-custom">
+                <div class="product-details-img horizontal-tab">
+                    <div class="product-slider popup-gallery product-details_slider" data-slick-options='{
+                "slidesToShow": 1,
+                "arrows": false,
+                "fade": true,
+                "draggable": false,
+                "swipe": false,
+                "asNavFor": ".pd-slider-nav"
+                }'>
+                        <div class="single-image border">
+                            <a href="{{ url_for('static', filename='upload/product/') }}{{dataProduct[8]}}">
+                                <img src="{{ url_for('static', filename='upload/product/') }}{{dataProduct[8]}}" alt="Product">
+                            </a>
+                        </div>
+                       
+                    </div>
+                    <div class="pd-slider-nav product-slider" data-slick-options='{
+                "slidesToShow": 4,
+                "asNavFor": ".product-details_slider",
+                "focusOnSelect": true,
+                "arrows" : false,
+                "spaceBetween": 30,
+                "vertical" : false
+                }' data-slick-responsive='[
+                    {"breakpoint":1501, "settings": {"slidesToShow": 4}},
+                    {"breakpoint":1200, "settings": {"slidesToShow": 4}},
+                    {"breakpoint":992, "settings": {"slidesToShow": 4}},
+                    {"breakpoint":575, "settings": {"slidesToShow": 3}}
+                ]'>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-custom">
+                <div class="product-summery position-relative">
+                    <div class="product-head mb-3">
+                        <h2 class="product-title">{{ dataProduct[1] }}</h2>
+                    </div>
+                    <div class="price-box mb-2">
+                        <span class="regular-price">Rp : {{ dataProduct[5] }}</span> 
+                    </div>
+                   
+                    <div class="sku mb-3">
+                        <span>Stok : {{ dataProduct[6]  }}</span>
+                    </div>
+                
+                    <div class="quantity-with_btn mb-4">
+                        <div class="quantity">
+                            <div class="cart-plus-minus">
+                                <input class="cart-plus-minus-box" value="0" type="text">
+                                <div class="dec qtybutton">-</div>
+                                <div class="inc qtybutton">+</div>
+                            </div>
+                        </div>
+                        <div class="add-to_cart">
+                            <a class="btn obrien-button primary-btn" href="cart.html">Add to cart</a>
+                        </div>
+                    </div>
+                    <div class="buy-button mb-5">
+                        <a href="#" class="btn obrien-button-3 black-button">Buy it now</a>
+                    </div>
+                    <div class="social-share mb-4">
+                        <span>Share :</span>
+                        <a href="#"><i class="fa fa-facebook-square facebook-color"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square twitter-color"></i></a>
+                        <a href="#"><i class="fa fa-linkedin-square linkedin-color"></i></a>
+                        <a href="#"><i class="fa fa-pinterest-square pinterest-color"></i></a>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+        <div class="row mt-no-text">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active text-uppercase" id="home-tab" data-toggle="tab" href="#connect-1" role="tab" aria-selected="true">Description</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" id="contact-tab" data-toggle="tab" href="#connect-3" role="tab" aria-selected="false">Shipping Policy</a>
+                    </li>
+                </ul>
+                <div class="tab-content mb-text" id="myTabContent">
+                    <div class="tab-pane fade show active" id="connect-1" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="desc-content">
+                            <p class="mb-3">{{ dataProduct[2] }}</p>
+                             
+                        </div>
+                    </div>
+                   
+                    <div class="tab-pane fade" id="connect-3" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="shipping-policy">
+                            <h4 class="title-3 mb-4">Shipping policy for our store</h4>
+                            <p class="desc-content mb-2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate</p>
+                            <ul class="policy-list mb-2">
+                                <li>1-2 business days (Typically by end of day)</li>
+                                <li><a href="#">30 days money back guaranty</a></li>
+                                <li>24/7 live support</li>
+                                <li>odio dignissim qui blandit praesent</li>
+                                <li>luptatum zzril delenit augue duis dolore</li>
+                                <li>te feugait nulla facilisi.</li>
+                            </ul>
+                            <p class="desc-content mb-2">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum</p>
+                            <p class="desc-content mb-2">claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per</p>
+                            <p class="desc-content mb-2">seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- end template -->

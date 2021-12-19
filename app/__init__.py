@@ -41,4 +41,6 @@ db = init_connection_engine()
 # pylint: disable=cyclic-import, wrong-import-position
 from app.views import tes,users
 from app.views.backend import dashboard,category,subcategory,product
+from app.views.frontend import frontend
+
 

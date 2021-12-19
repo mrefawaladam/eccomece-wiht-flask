@@ -1,0 +1,132 @@
+{% extends "frontend/layouts/app.html" %}
+<!-- template title -->
+{% block title %}
+Login
+{% endblock %}
+<!-- end template -->
+ <!-- tempalte breadcumb -->
+{% block breadcrumb %}
+<div class="breadcrumbs-area position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="breadcrumb-content position-relative section-content">
+                    <h3 class="title-3">Detail Prdouk</h3>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li>Shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- end template -->
+
+
+<!-- tempalte content -->
+{% block content %}
+<div class="single-product-main-area">
+    <div class="container container-default custom-area">
+         <div class="container">
+            
+            <form action="{{ url_for('analiticSearch') }}" method="post">
+            <div class="row">
+                <div class="col-md-2">
+                   <div class="mb-3">
+                   <label for="tes" class="form-label">Start Date</label>
+                    <input type="date" name="start_date" class="form-control" id="">
+                   </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="mb-3">
+                    <label for="tes" class="form-label">End Date</label>
+                     <input type="date" name="end_date" class="form-control" id="">
+                    </div>
+                 </div>
+                 
+                <div class="col-md-2">
+                 <div class="mb-3">
+                    <label for="ctgr" class="form-label">Categories</label>
+                    <select id="ctgr" name="categori" class="form-select">
+                      {% for row in resultCategory %}
+                      <option {{ row[0] }} >{{ row[1] }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <div class="mb-3">
+                    <label for="ctgr" class="form-label">Sub Categories</label>
+                    <select id="ctgr" name="sub_categori" class="form-select">
+                      {% for row in resultSubCategory %}
+                      <option {{ row[0] }} >{{ row[1] }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="mb-3">
+                        <br> 
+                        <button type="submit" id="submit" name="submit" class="btn obrien-button primary-btn rounded-0 mb-0">Filter</button>
+                      </div>
+                </div>
+            </div>
+          </form>
+            <canvas id="myChart" width="100%" ></canvas>
+
+         </div>
+    </div>
+</div>
+
+{% endblock %}
+<!-- end template -->
+
+{% block js %}
+<script src="https://cdnjs.com/libraries/Chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  
+  const ctx = document.getElementById('myChart').getContext('2d');
+  
+  const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: {{ lebel|tojson }},
+          datasets: [{
+              label:  {{ votes|tojson }},
+              data: {{ jumlah|tojson }},
+              
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+  </script>
+   
+{% endblock %}

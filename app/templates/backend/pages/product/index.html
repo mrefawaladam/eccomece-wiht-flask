@@ -38,7 +38,14 @@ Category
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">Gambar</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">View</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Weight</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Sub Category</th>
+                                <th scope="col">Image</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -51,7 +58,27 @@ Category
                                     {{ row[1] }}
                                 </td>
                                 <td>
-                                    <img width="50" src="{{ url_for('static', filename='upload/categori/') }}{{row[2]}}" alt="">
+                                    {{ row[2] }}
+                                </td>
+                                <td>
+                                    {{ row[4] }}
+                                </td>
+                                <td>
+                                    {{ row[5] }}
+                                </td>
+                                <td>
+                                    {{ row[6] }}
+                                </td>
+                                <td>
+                                    {{ row[7] }}
+                                </td>
+                                <td>
+                                    {{ row[10] }}
+                                </td><td>
+                                    {{ row[9] }}
+                                </td>
+                                <td>
+                                    <img width="50" src="{{ url_for('static', filename='upload/product/') }}{{row[8]}}" alt="">
                                 </td>
  
                                 <td>

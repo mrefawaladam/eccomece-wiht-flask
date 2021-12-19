@@ -46,6 +46,3 @@ def create():
     return jsonify(result)
 
 
-@app.route("/")
-def homepage(): 
-    return render_template("index.html" )

@@ -5,6 +5,11 @@ import bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename  
 
+
+
+app.config["UPLOAD_FOLDER"] = "app/static/upload/product/"
+
+
 @app.route("/product", methods=['GET','POST'])
 def product(): 
     
@@ -15,7 +20,7 @@ def product():
         # koneksi open
         container = []
         conn = db.connect()
-        query = conn.execute("SELECT * FROM product") 
+        query = conn.execute("SELECT p.*, sc.name as nama_sub_categoi, c.name as nama_categoi FROM product as p INNER JOIN sub_category sc ON p.id_sub_category = sc.id_sub_category INNER JOIN category c ON c.id_category = sc.category_id") 
         results = query.fetchall()
         # memasukan data dari database ke sql
         for data in results:
@@ -31,19 +36,26 @@ def productCreate():
         conn = db.connect()
         files = request.files['file']
         name = request.form.get('name')
+        id_sub_category = request.form.get('id_sub_category')
+        price = request.form.get('price')
+        qty = request.form.get('qty')
+        weight = request.form.get('weight') 
+        description = request.form.get('description') 
+
+
         # prose upload foto
         filename = secure_filename(files.filename)
         files.save(app.config['UPLOAD_FOLDER'] + filename)
  
-        query = 'Insert Into category (name, image) VALUES ("{}", "{}");'.format(
-        name, filename )
+        query = 'Insert Into product (name, description,id_sub_category, price,qty,weight,main_image	) VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}");'.format(
+        name,description,id_sub_category,price,qty,weight, filename )
         conn.execute(query)
         conn.close()
-        return redirect(url_for('category'))
+        return redirect(url_for('product'))
     else:
         category = []
         conn = db.connect()
-        query = conn.execute("SELECT * FROM category") 
+        query = conn.execute("SELECT * FROM sub_category") 
         results = query.fetchall()
         # memasukan data dari database ke sql
         for data in results:
